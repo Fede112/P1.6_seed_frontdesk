@@ -1,0 +1,186 @@
+IOR-3.2.0rc1: MPI Coordinated Test of Parallel I/O
+Began               : Tue Dec 18 09:58:00 2018
+Command line        : /u/MHPC18/fbarone/software/ior/3.2.0rc1/bin/ior -s 1 -d 2 -w -r -i 1 -e -t 1m -b 3g -vv -B -a POSIX -o /u/MHPC18/fbarone/P1.6_seed/ior/testfile.tmp
+Machine             : Linux b27.hpc.c3e
+Start time skew across all tasks: 1991411.04 sec
+TestID              : 0
+StartTime           : Tue Dec 18 09:58:00 2018
+Path                : /u/MHPC18/fbarone/P1.6_seed/ior
+FS                  : 1.3 TiB   Used FS: 73.5%   Inodes: 82.8 Mi   Used Inodes: 3.8%
+Participating tasks: 48
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /u/MHPC18/fbarone/P1.6_seed/ior/testfile.tmp
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : no tasks offsets
+tasks               : 48
+clients per node    : 24
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 3 GiB
+aggregate filesize  : 144 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 2 seconds . . .
+Commencing write performance test: Tue Dec 18 09:58:02 2018
+write     74.51      3145728    1024.00    0.180756   1979.13    99.48      1979.13    0   
+delaying 2 seconds . . .
+Commencing read performance test: Tue Dec 18 10:31:03 2018
+read      39.50      3145728    1024.00    0.066542   3733       10.57      3733       0   
+remove    -          -          -          -          -          -          13.73      0   
+Max Write: 74.51 MiB/sec (78.12 MB/sec)
+Max Read:  39.50 MiB/sec (41.42 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write          74.51      74.51      74.51       0.00      74.51      74.51      74.51       0.00 1979.13311     0     48  24    1   0     0        1         0    0      1 3221225472  1048576  147456.0 POSIX      0
+read           39.50      39.50      39.50       0.00      39.50      39.50      39.50       0.00 3733.25206     0     48  24    1   0     0        1         0    0      1 3221225472  1048576  147456.0 POSIX      0
+Finished            : Tue Dec 18 11:33:30 2018
+IOR-3.2.0rc1: MPI Coordinated Test of Parallel I/O
+ior WARNING: fsync() not supported in selected backend.  Using value of 0.
+Began               : Tue Dec 18 11:33:31 2018
+Command line        : /u/MHPC18/fbarone/software/ior/3.2.0rc1/bin/ior -s 1 -d 2 -w -r -i 1 -e -t 1m -b 3g -vv -B -a HDF5 -o /u/MHPC18/fbarone/P1.6_seed/ior/testfile.tmp
+Machine             : Linux b27.hpc.c3e
+Start time skew across all tasks: 1991411.07 sec
+TestID              : 0
+StartTime           : Tue Dec 18 11:33:31 2018
+Path                : /u/MHPC18/fbarone/P1.6_seed/ior
+FS                  : 1.3 TiB   Used FS: 73.5%   Inodes: 82.8 Mi   Used Inodes: 3.8%
+Participating tasks: 48
+
+Options: 
+api                 : HDF5
+apiVersion          : 1.8.21 (Parallel)
+test filename       : /u/MHPC18/fbarone/P1.6_seed/ior/testfile.tmp
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : no tasks offsets
+tasks               : 48
+clients per node    : 24
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 3 GiB
+aggregate filesize  : 144 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 2 seconds . . .
+Commencing write performance test: Tue Dec 18 11:33:34 2018
+write     78.93      3145728    1024.00    0.163007   1853.00    1713.50    1868.14    0   
+delaying 2 seconds . . .
+Commencing read performance test: Tue Dec 18 12:04:48 2018
+read      34.35      3145728    1024.00    4.58       4288       96.48      4293       0   
+remove    -          -          -          -          -          -          18.63      0   
+Max Write: 78.93 MiB/sec (82.77 MB/sec)
+Max Read:  34.35 MiB/sec (36.02 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write          78.93      78.93      78.93       0.00      78.93      78.93      78.93       0.00 1868.14203     0     48  24    1   0     0        1         0    0      1 3221225472  1048576  147456.0 HDF5      0
+read           34.35      34.35      34.35       0.00      34.35      34.35      34.35       0.00 4292.63853     0     48  24    1   0     0        1         0    0      1 3221225472  1048576  147456.0 HDF5      0
+Finished            : Tue Dec 18 13:16:35 2018
+IOR-3.2.0rc1: MPI Coordinated Test of Parallel I/O
+Began               : Tue Dec 18 13:16:38 2018
+Command line        : /u/MHPC18/fbarone/software/ior/3.2.0rc1/bin/ior -s 1 -d 2 -w -r -i 1 -e -t 1m -b 3g -vv -B -a MPIIO -o /u/MHPC18/fbarone/P1.6_seed/ior/testfile.tmp
+Machine             : Linux b27.hpc.c3e
+Start time skew across all tasks: 1991411.05 sec
+TestID              : 0
+StartTime           : Tue Dec 18 13:16:38 2018
+Path                : /u/MHPC18/fbarone/P1.6_seed/ior
+FS                  : 1.3 TiB   Used FS: 73.5%   Inodes: 82.8 Mi   Used Inodes: 3.8%
+Participating tasks: 48
+
+Options: 
+api                 : MPIIO
+apiVersion          : (3.1)
+test filename       : /u/MHPC18/fbarone/P1.6_seed/ior/testfile.tmp
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : no tasks offsets
+tasks               : 48
+clients per node    : 24
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 3 GiB
+aggregate filesize  : 144 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 2 seconds . . .
+Commencing write performance test: Tue Dec 18 13:16:46 2018
+write     78.79      3145728    1024.00    5.67       1865.89    1706.22    1871.53    0   
+delaying 2 seconds . . .
+Commencing read performance test: Tue Dec 18 13:47:54 2018
+read      38.64      3145728    1024.00    0.215410   3816       126.27     3816       0   
+remove    -          -          -          -          -          -          9.51       0   
+Max Write: 78.79 MiB/sec (82.62 MB/sec)
+Max Read:  38.64 MiB/sec (40.51 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write          78.79      78.79      78.79       0.00      78.79      78.79      78.79       0.00 1871.53449     0     48  24    1   0     0        1         0    0      1 3221225472  1048576  147456.0 MPIIO      0
+read           38.64      38.64      38.64       0.00      38.64      38.64      38.64       0.00 3816.43502     0     48  24    1   0     0        1         0    0      1 3221225472  1048576  147456.0 MPIIO      0
+Finished            : Tue Dec 18 14:51:40 2018
+IOR-3.2.0rc1: MPI Coordinated Test of Parallel I/O
+ior WARNING: fsync() not supported in selected backend.  Using value of 0.
+Began               : Tue Dec 18 14:51:42 2018
+Command line        : /u/MHPC18/fbarone/software/ior/3.2.0rc1/bin/ior -s 1 -d 2 -w -r -i 1 -e -t 1m -b 3g -vv -B -a NCMPI -o /u/MHPC18/fbarone/P1.6_seed/ior/testfile.tmp
+Machine             : Linux b27.hpc.c3e
+Start time skew across all tasks: 1991411.03 sec
+TestID              : 0
+StartTime           : Tue Dec 18 14:51:42 2018
+Path                : /u/MHPC18/fbarone/P1.6_seed/ior
+FS                  : 1.3 TiB   Used FS: 73.5%   Inodes: 82.8 Mi   Used Inodes: 3.8%
+Participating tasks: 48
+
+Options: 
+api                 : NCMPI
+apiVersion          : 1.10.0 of  2 Jul 2018
+test filename       : /u/MHPC18/fbarone/P1.6_seed/ior/testfile.tmp
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : no tasks offsets
+tasks               : 48
+clients per node    : 24
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 3 GiB
+aggregate filesize  : 144 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 2 seconds . . .
+Commencing write performance test: Tue Dec 18 14:51:44 2018
+write     77.22      3145728    1024.00    0.154380   1909.29    1719.18    1909.55    0   
+delaying 2 seconds . . .
+Commencing read performance test: Tue Dec 18 15:23:40 2018
+read      36.11      3145728    1024.00    5.02       4079       190.96     4084       0   
+remove    -          -          -          -          -          -          9.17       0   
+Max Write: 77.22 MiB/sec (80.97 MB/sec)
+Max Read:  36.11 MiB/sec (37.86 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write          77.22      77.22      77.22       0.00      77.22      77.22      77.22       0.00 1909.54728     0     48  24    1   0     0        1         0    0      1 3221225472  1048576  147456.0 NCMPI      0
+read           36.11      36.11      36.11       0.00      36.11      36.11      36.11       0.00 4083.87832     0     48  24    1   0     0        1         0    0      1 3221225472  1048576  147456.0 NCMPI      0
+Finished            : Tue Dec 18 16:31:48 2018
