@@ -1,11 +1,13 @@
 #!/bin/bash
 
-touch read_plot.txt
-echo "#POSIX HDF5 MPIIO NCMPI" >> read_plot.txt
-for filesystem in lustre NFS local;do
-    awk '/Summary of all tests/ {for(i=1; i<=3; i++) {getline} print $4}' ${filesystem}_output.raw | tr '\n' ' ' | awk 'END{print}' | sed 's/ *$//' >> read_plot.txt
-done
+FOLDER=$1
 
-#touch write_plot.ipynb
-#sleep 2
-#jupyter-notebook write_plot.ipynb
+DATA=/home/lbonaldo/Documents/SISSA/Corsi/6.SDM/P1.6_seed_frontdesk/ior/data/$1
+
+OUTPUT_PATH=/home/lbonaldo/Documents/SISSA/Corsi/6.SDM/P1.6_seed_frontdesk/ior/analysis/$1
+
+touch $OUTPUT/read_plot.txt
+echo "#POSIX HDF5 MPIIO NCMPI" >> $OUTPUT/read_plot.txt
+for filesystem in lustre NFS;do
+    awk '/Summary of all tests/ {for(i=1; i<=3; i++) {getline} print $4}' $DATA/${filesystem}_output.raw | tr '\n' ' ' | awk 'END{print}' | sed 's/ *$//' >> $OUTPUT/read_plot.txt
+done
