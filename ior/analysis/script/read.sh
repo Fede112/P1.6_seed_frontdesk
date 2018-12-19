@@ -4,7 +4,7 @@ FOLDER=$1
 
 DATA=/home/lbonaldo/Documents/SISSA/Corsi/6.SDM/P1.6_seed_frontdesk/ior/data/$1
 
-OUTPUT_PATH=/home/lbonaldo/Documents/SISSA/Corsi/6.SDM/P1.6_seed_frontdesk/ior/analysis/$1
+OUTPUT=/home/lbonaldo/Documents/SISSA/Corsi/6.SDM/P1.6_seed_frontdesk/ior/analysis/$1
 
 touch $OUTPUT/read_plot.txt
 echo "#POSIX HDF5 MPIIO NCMPI" >> $OUTPUT/read_plot.txt
