@@ -11,13 +11,13 @@ set boxwidth 0.9
 set xtics format ""
 set grid ytics
 
-set title "READING"
+set title "READING LUSTRE"
 plot "read.dat"  using 2:xtic(1) title "1 OST" linecolor rgb red, \
             		'' using 3 title "2 OST" linecolor rgb blue, \
             		'' using 4 title "4 OST" linecolor rgb green, \
 
 set yrange [0:1200]
-set title "WRITING"
+set title "WRITING LUSTRE"
 plot "write.dat"  using 2:xtic(1) title "1 OST" linecolor rgb red, \
             		'' using 3 title "2 OST" linecolor rgb blue, \
             		'' using 4 title "4 OST" linecolor rgb green, \
