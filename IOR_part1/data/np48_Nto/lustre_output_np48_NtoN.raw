@@ -1,0 +1,53 @@
+IOR-3.2.0rc1: MPI Coordinated Test of Parallel I/O
+Began               : Wed Dec 19 14:23:34 2018
+Command line        : /u/MHPC18/fbarone/software/ior/3.2.0rc1/bin/ior -s 1 -d 2 -w -r -i 2 -e -t 1m -b 3g -vv -B -F -a POSIX -o /lustre/MHPC18/fbarone/testfile_test.tmp
+Machine             : Linux b28.hpc.c3e
+Start time skew across all tasks: 5618961.13 sec
+TestID              : 0
+StartTime           : Wed Dec 19 14:23:34 2018
+Path                : /lustre/MHPC18/fbarone
+FS                  : 29.1 TiB   Used FS: 71.9%   Inodes: 17.5 Mi   Used Inodes: 63.8%
+Participating tasks: 48
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /lustre/MHPC18/fbarone/testfile_test.tmp
+access              : file-per-process
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : no tasks offsets
+tasks               : 48
+clients per node    : 24
+repetitions         : 2
+xfersize            : 1 MiB
+blocksize           : 3 GiB
+aggregate filesize  : 144 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+delaying 2 seconds . . .
+Commencing write performance test: Wed Dec 19 14:23:36 2018
+write     689.81     3145728    1024.00    0.058633   213.76     133.69     213.76     0   
+delaying 2 seconds . . .
+Commencing read performance test: Wed Dec 19 14:27:12 2018
+read      583.49     3145728    1024.00    0.056733   252.71     165.53     252.71     0   
+remove    -          -          -          -          -          -          0.015177   0   
+delaying 2 seconds . . .
+Commencing write performance test: Wed Dec 19 14:31:27 2018
+write     807.08     3145728    1024.00    0.060435   182.70     54.19      182.70     1   
+delaying 2 seconds . . .
+Commencing read performance test: Wed Dec 19 14:34:31 2018
+read      764.20     3145728    1024.00    0.056784   192.95     66.51      192.95     1   
+remove    -          -          -          -          -          -          0.010409   1   
+Max Write: 807.08 MiB/sec (846.29 MB/sec)
+Max Read:  764.20 MiB/sec (801.33 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write         807.08     689.81     748.45      58.64     807.08     689.81     748.45      58.64  198.23319     0     48  24    2   1     0        1         0    0      1 3221225472  1048576  147456.0 POSIX      0
+read          764.20     583.49     673.85      90.36     764.20     583.49     673.85      90.36  222.83363     0     48  24    2   1     0        1         0    0      1 3221225472  1048576  147456.0 POSIX      0
+Finished            : Wed Dec 19 14:37:44 2018
